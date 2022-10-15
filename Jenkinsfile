@@ -1,5 +1,9 @@
 pipeline {
 
+    tools {
+    nodejs 'default-nodejs'
+  }
+
   environment {
     dockerimagename = "arjunscorpio2000/jenkins-node-project"
     dockerImage = ""
@@ -14,6 +18,22 @@ pipeline {
         git 'https://github.com/injusticescorpio/jenkins-nodeapp.git'
       }
     }
+
+      stage('Run and test image') {
+      steps {
+        script{
+          sh 'npm install'
+          result = sh (
+            script: "npm t",
+            returnStatus: true)
+            if (result != 0) {
+                currentBuild.result = 'FAILURE'
+                break
+            }
+        }
+      }
+    }
+
 
     stage('Build image') {
       steps{
