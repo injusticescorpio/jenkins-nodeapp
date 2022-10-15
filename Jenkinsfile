@@ -21,7 +21,7 @@ pipeline {
       steps {
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
           sh 'npm install'
-            script: "npm t",
+          sh "npm t",
         }
       }
     }
