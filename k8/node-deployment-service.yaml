@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: node-container
-          image: arjunscorpio2000/tips4u:latest
+          image: arjunscorpio2000/jenkins-node-project:v1
           ports:
             - containerPort: 4000
               name: nodeapp
