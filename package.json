@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./test/*_test.js",
     "dev":"nodemon server.js",
     "start":"node server.js"
   },
@@ -14,5 +14,9 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0",
+    "supertest": "^6.2.4"
   }
 }
