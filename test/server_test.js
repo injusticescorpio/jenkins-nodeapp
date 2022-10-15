@@ -6,6 +6,6 @@ describe("request method testing",function(){
         request(app)
       .get('/')
       .set('Accept', 'application/json')
-      .expect(200,'hello node app',done)
+      .expect(200,'hello node app1',done)
     })
 })
