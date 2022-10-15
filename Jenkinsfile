@@ -19,7 +19,7 @@ pipeline {
 
       stage('Run and test image') {
       steps {
-        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+        catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
           sh 'npm install'
           sh "npm t"
         }
