@@ -19,14 +19,9 @@ pipeline {
 
       stage('Run and test image') {
       steps {
-        script{
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
           sh 'npm install'
-          result = sh (
             script: "npm t",
-            returnStatus: true)
-            if (result != 0) {
-                currentBuild.result = 'FAILURE'
-            }
         }
       }
     }
