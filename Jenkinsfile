@@ -1,6 +1,6 @@
 pipeline {
 
-   tools {nodejs "node"}
+   tools {nodejs "nodejs"}
 
   environment {
     dockerimagename = "arjunscorpio2000/jenkins-node-project"
