@@ -40,7 +40,7 @@ pipeline {
     stage('Deploying App to Kubernetes') {
       steps {
         script {
-          kubernetesDeploy(configs: "./k8/node-deployment-service.yaml", kubeconfigId: "kubernetes-arjun")
+          kubernetesDeploy(configs: "k8/node-deployment-service.yaml", kubeconfigId: "kubernetes-arjun")
         }
       }
     }
