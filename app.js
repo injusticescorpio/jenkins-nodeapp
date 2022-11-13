@@ -18,7 +18,7 @@ let posts=[
 
 
 app.get('/', (req, res) =>{
-    res.status(200).send("hello node app")
+    res.status(200).send("Hello This is a sample node app created for deployment purpose")
 })
 
 app.get('/posts', (req, res) =>{
